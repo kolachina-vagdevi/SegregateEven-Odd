@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.Scanner;
+public class SegregateEvenOdd {
+    public static void evenOdd(int[] A)
+    {
+        int nextEven=0,nextOdd=A.length-1;
+        while(nextEven<nextOdd)
+        {
+            if(A[nextEven]%2 == 0)
+            {
+                nextEven++;
+            }
+            else{
+                int temp=A[nextEven];
+                A[nextEven]=A[nextOdd];
+                A[nextOdd--]=temp;
+            }
+        }
+      for (int i = 0; i < A.length; i++) 
+
+       { 
+
+          System.out.print(A[i] + " "); 
+
+       } 
+  
+          System.out.println("");
+
+        
+}
+public static void main(String args[]) {
+   
+    
+Scanner s = new Scanner(System.in);
+String val = s.nextLine(); 
+String[] arr = val.split("\\s+"); 
+int a[]=new int[arr.length ];
+for(int i=0; i<arr.length; i++){ 
+ a[i]=Integer.parseInt(arr[i]);
+}
+
+evenOdd(a);
+      
+
+    }
+}
